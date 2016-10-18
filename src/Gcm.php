@@ -100,16 +100,19 @@ class Gcm extends PushService implements PushServiceInterface
      *
      * @return array
      */
-    private function cleanConfigParams(){
+    public function cleanConfigParams(){
 
         /**
          * Add the params you want to be removed from the push notification
          */
         $paramsToBeRemoved = ['apiKey'];
 
-        return array_filter($this->config,function($key) use($paramsToBeRemoved){
-            return !in_array($key,$paramsToBeRemoved);
-        },ARRAY_FILTER_USE_KEY);
+        $final = [];
+        foreach ($this->config as $key => $value)
+        {
+            if(!in_array($key,$paramsToBeRemoved)) $final[$key] = $value;
+        }
+        return $final;
     }
 
     /**
