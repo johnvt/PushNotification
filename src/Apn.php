@@ -137,13 +137,14 @@ class Apn extends PushService implements PushServiceInterface
         $this->messageNoExistCertificate();
         return false;
     }
+
     /**
-     * Create the connection to APNS server
-     * If some error, the error is stored in class feedback property.
-     * IF OKAY, return connection
-     *
-     * @return bool|resource
-     */
+    * Create the connection to APNS server
+    * If some error, the error is stored in class feedback property.
+    * IF OKAY, return connection
+    *
+    * @return bool|resource
+    */
     private function openConnectionAPNS()
     {
 
