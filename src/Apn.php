@@ -262,7 +262,7 @@ class Apn extends PushService implements PushServiceInterface
         /**
          * Retrieving the apn feedback
          */
-        $apnsFeedback = $this->apnsFeedback();
+        $apnsFeedback = $this->config['apns_feedback_after_send'] ? $this->apnsFeedback() : [];
 
         /**
          * Merge the apn feedback to our custom feedback if there is any.
