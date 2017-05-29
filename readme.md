@@ -7,6 +7,10 @@
 
 This is an easy to use package to send push notification.
 
+#### Changes from johnvt:
+
+* Added config item for apn: 'apns_feedback_after_send'. Only if this is true it will check the feedback url for deprecated tokens right after sending the push message. I needed this setting because I could not connect to the feedback url a lot of the times. And if it failed, the push wasn't delivered too. I don't know why this happened because the feedback is retrieved after sending the push, but it happened.
+
 #### Push Service Providers Available:
 
 * GCM
